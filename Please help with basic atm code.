@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int creds;
+    char withdraw;
+    int withdrawamount;
+    int balance = 1000000;
+    char deposit;
+    int depositamount;
+    //title
+    cout << "\n\t\tWelcome To Sep Bank\n";
+    //input user info
+    cout << "\nPlease enter your credentials: ";
+    cin >> creds;
+    
+    if(creds==1234567){
+        
+        cout << endl << "Your current balance is "<< balance << endl;
+        cout << endl << "Do you want to withdraw?(Y/N): ";
+        cin >> withdraw;
+        
+        while (!(withdraw == 'Y' || withdraw == 'y' || withdraw == 'N' || withdraw == 'n' )){
+            cout << "Bad input." << endl;
+            cout << "Do you want to withdraw?(Y/N): ";
+            cin >> withdraw;
+        }
+        if(withdraw == 'Y' || withdraw == 'y' ){
+            cout << endl << "Ok enter how much you want to withdraw: ";
+            cin >> withdrawamount;
+            cout << endl << "Your new balance is "<<  balance-withdrawamount << endl;
+        }
+        if(withdraw == 'N' || withdraw == 'n' ){
+            cout << endl << "Do you want to deposit?(Y/N): ";
+            cin >> deposit;
+           
+            while (!(deposit == 'Y' || deposit == 'y' || deposit == 'N' || deposit == 'n' )){
+                cout << "Bad input." << endl;
+                cout << "Do you want to deposit?(Y/N): ";
+                cin >> deposit;
+            }
+            if (deposit == 'Y' || deposit == 'y' ){
+                cout << endl <<"Ok enter how much you want to deposit: ";
+                cin >> depositamount;
+                cout << endl << "Your new balance is "<< balance+depositamount << endl;
+            }
+        }
+        
+    }
+    else{
+        cout << "Sorry invalid credentials have a nice day though!" << endl;
+    }
+    
+    
+    return 0;
+}
